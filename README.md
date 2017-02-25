@@ -1,7 +1,7 @@
 # Rx tinker
 
 A small app to play around with rx concepts in a visual way.
-Aimed towards beginner level.
+Aimed towards beginner programmers.
 
 ## Install
 
