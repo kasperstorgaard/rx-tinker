@@ -7,7 +7,7 @@ Aimed towards beginner programmers.
 
 The libraries required in this app, is installed via the package manager yarn.
 ```npm install -g yarn```
-(for alternative install methods, go (here)[https://yarnpkg.com/en/docs/install])
+(for alternative install methods, go [here](https://yarnpkg.com/en/docs/install))
 
 Then install the dependencies by running:
 ```yarn install```
