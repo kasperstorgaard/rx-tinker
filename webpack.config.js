@@ -8,28 +8,26 @@ module.exports = {
     publicPath: '/public/',
     filename: 'bundle.js'
   },
-  plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin()
-  ],
   module: {
     rules: [{
-      test: /\.tag$/,
+      test: /\.vue$/,
       exclude: /node_modules/,
       use: {
-        loader: 'riot-tag-loader',
-        options: {
-          query: {
-            type: 'es6', // transpile the riot tags using babel
-            hot: true,
-            debug: true
-          }
-        }
+        loader: 'vue-loader'
       }
     }, {
       test: /\.js$/,
       exclude: /node_modules/,
       use: {
         loader: 'babel-loader'
+      }
+    }, {
+      test: /\.(png|jpg|gif|svg)$/,
+      use: {
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?[hash]'
+        }
       }
     }]
   }

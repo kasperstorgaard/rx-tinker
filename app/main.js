@@ -1,5 +1,7 @@
-import riot from 'riot';
-import 'riot-hot-reload';
-import './sample.tag';
+import Vue from 'vue';
+import app from './app.vue';
 
-riot.mount('sample', {});
+new Vue({
+    el: '#app',
+    render: (h) => h(app)
+});
