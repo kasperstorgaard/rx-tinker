@@ -1,0 +1,5 @@
+<div class="container">
+    <interval-data @out="data = $event.data"></interval-data>
+    <map-operator :in="data" @out="mapped = $event.data"></map-operator>
+    <print-visualizer :in="mapped"></print-visualizer>
+</div>

@@ -1,0 +1,9 @@
+body {
+    font : 100% Helvetica, sans-serif;
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    padding-top: 70px;
+}

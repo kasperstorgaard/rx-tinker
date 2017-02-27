@@ -8,19 +8,25 @@ module.exports = {
     publicPath: '/public/',
     filename: 'bundle.js'
   },
+  devtool: 'cheap-module-eval-source-map',
   module: {
     rules: [{
-      test: /\.vue$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'vue-loader'
-      }
-    }, {
       test: /\.js$/,
       exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader'
-      }
+      use: ['babel-loader']
+    }, {
+      test: /\.html$/,
+      exclude: /node_modules/,
+      use: ['html-loader']
+    }, {
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: { modules: true }
+        }
+      ]
     }, {
       test: /\.(png|jpg|gif|svg)$/,
       use: {
@@ -30,5 +36,9 @@ module.exports = {
         }
       }
     }]
-  }
+  },
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 }
